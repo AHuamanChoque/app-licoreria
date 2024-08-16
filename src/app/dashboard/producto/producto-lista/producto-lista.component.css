@@ -1,0 +1,18 @@
+body {
+  margin: 0; /* Asegúrate de que el cuerpo no tenga márgenes */
+  height: 100vh; /* Asegúrate de que el cuerpo ocupe toda la altura de la ventana */
+}
+
+.table-container {
+  display: flex;
+  justify-content: center; /* Centra la tabla horizontalmente */
+  align-items: flex-start; /* Alinea la tabla al principio del contenedor verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido se desborda */
+  padding: 30px; /* Espacio alrededor de la tabla */
+}
+
+table {
+  width: auto; /* Ajusta el ancho de la tabla según su contenido */
+  max-width: 100%; /* Limita el ancho máximo de la tabla para que no se desborde */
+}

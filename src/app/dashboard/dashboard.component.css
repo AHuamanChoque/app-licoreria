@@ -1,0 +1,29 @@
+#nav1{
+    background-color: rgb(27, 25, 25);
+}
+
+#nav1 {
+    color:#28c5b5;
+  }
+
+#nav2 {
+    background-color: #0a4943; /* Azul Material Design */
+  }
+
+#btn-opcion {
+  background-color: #361804; /* Azul */
+  color: #fff; /* Color del texto en blanco */
+}
+
+#btn-opcion:hover {
+    background-color: #ec4d0eb7; /* Azul oscuro al pasar el ratón sobre el botón */
+}
+
+.example-spacer-two {
+  flex: 1; /* Hace que el espacio se expanda para empujar el ícono hacia el extremo derecho */
+}
+
+
+.example-icon:hover{
+  background-color: #0b063d;
+}

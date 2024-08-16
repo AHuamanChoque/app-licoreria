@@ -1,0 +1,11 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    background-image: url("./assets/image/licores.jpg");
+    background-size: cover; /* Ajusta el tamaño para cubrir el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  }

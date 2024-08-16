@@ -1,0 +1,36 @@
+<mat-toolbar id="nav1">
+    <span>Mi Licoreria</span>
+    <span class="example-spacer-one"></span>
+    <button (click)="irHome()" mat-icon-button class="example-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>dashboard</mat-icon>
+    </button>
+    <span class="example-spacer-two"></span>    
+    <button (click)="salir()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  
+  <mat-toolbar id="nav2">
+
+      <button id="btn-opcion" (click)="irProducto()" mat-flat-button>Productos</button>
+      &nbsp;
+      <button id="btn-opcion" (click)="irCategoria()" mat-flat-button>Categoria de Productos</button>
+      &nbsp;
+      <button id="btn-opcion" (click)="irProveedor()" mat-flat-button>Proveedores</button>
+      &nbsp;
+      <button id="btn-opcion" (click)="irTipoProveedor()" mat-flat-button>Tipo Proveedores</button>
+      &nbsp;
+      <button id="btn-opcion" (click)="irCliente()" mat-flat-button>Clientes</button>
+      &nbsp;
+      <button id="btn-opcion" (click)="irColaborador()" mat-flat-button>Colaboradores</button>
+      &nbsp;
+      <button id="btn-opcion" (click)="irCargo()" mat-flat-button>Cargo de Colaboradores</button>
+      &nbsp;
+      <button id="btn-opcion" mat-flat-button>Usuarios</button>
+
+  </mat-toolbar>
+
+
+<router-outlet></router-outlet>
+

@@ -3,24 +3,21 @@ import { MaterialModule } from '../../../angular-material/material/material.modu
 
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  precio:string;
+  codCargo: number;
+  nombreCargo: string;
+  
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', precio:'25'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', precio:'25'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', precio:'25'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be', precio:'25'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B', precio:'25'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C', precio:'25'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N', precio:'25'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O', precio:'25'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F', precio:'25'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne', precio:'25'},
+  {codCargo: 1, nombreCargo: 'Administrador'},
+  {codCargo: 2, nombreCargo: 'Operario'},
+  {codCargo: 3, nombreCargo: 'Vendedor'},
+  {codCargo: 4, nombreCargo: 'Atencion al Cliente'},
+  {codCargo: 5, nombreCargo: 'Gerente de calidad'},
+  {codCargo: 6, nombreCargo: 'Cajero'},
+  {codCargo: 7, nombreCargo: 'Asesor de productos'},
+  {codCargo: 8, nombreCargo: 'Reponedor de inventario'},
+  {codCargo: 9, nombreCargo: 'Delivery'},
 
 ];
 
@@ -32,6 +29,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrl: './cargo-lista.component.css'
 })
 export class CargoListaComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','precio'];
+  displayedColumns: string[] = ['codCargo','nombreCargo'];
   dataSource = ELEMENT_DATA;
 }

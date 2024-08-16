@@ -3,24 +3,29 @@ import { MaterialModule } from '../../../angular-material/material/material.modu
 
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  precio:string;
+  codcategoria: number;
+  nombrecategoria: string;
+  
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', precio:'25'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', precio:'25'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', precio:'25'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be', precio:'25'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B', precio:'25'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C', precio:'25'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N', precio:'25'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O', precio:'25'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F', precio:'25'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne', precio:'25'},
+  {codcategoria: 1, nombrecategoria: 'Cervezas'},
+  {codcategoria: 2, nombrecategoria: 'Vinos'},
+  {codcategoria: 3, nombrecategoria: 'Whisky'},
+  {codcategoria: 4, nombrecategoria: 'Ron'},
+  {codcategoria: 5, nombrecategoria: 'Ginebra'},
+  {codcategoria: 6, nombrecategoria: 'Vodka'},
+  {codcategoria: 7, nombrecategoria: 'Tequila'},
+  {codcategoria: 8, nombrecategoria: 'Brandy'},
+  {codcategoria: 9, nombrecategoria: 'Aguardiente'},
+  {codcategoria: 10, nombrecategoria: 'Vermut'},
+  {codcategoria: 11, nombrecategoria: 'Bitter'},
+  {codcategoria: 12, nombrecategoria: 'Destilados especiales'},
+  {codcategoria: 13, nombrecategoria: 'Pisco'},
+  {codcategoria: 14, nombrecategoria: 'Sake'},
+  {codcategoria: 15, nombrecategoria: 'Bebidas energéticas'},
+  {codcategoria: 16, nombrecategoria: 'Otros'},
+
 
 ];
 
@@ -32,6 +37,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrl: './categoria-lista.component.css'
 })
 export class CategoriaListaComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','precio'];
+  displayedColumns: string[] = ['codcategoria', 'nombrecategoria'];
   dataSource = ELEMENT_DATA;
 }

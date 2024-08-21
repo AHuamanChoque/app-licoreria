@@ -1,1 +1,53 @@
-<p>usuario-detalle works!</p>
+<div class="module-header">
+    <div class="left">
+        <h3>{{formTitulo}}</h3>
+    </div>
+    <div class="right">
+        <button mat-raised-button color="primary">
+            Guardar
+        </button>        
+    </div>
+</div>
+<br>
+<hr />
+<br>
+<div class="form-container">
+    <form class="form" [formGroup]="usuarioForm">
+
+        <mat-form-field>
+            <mat-label>Nick Usuario:</mat-label>
+            <input matInput type="text" name="nickusuario" 
+            formControlName="nickusuario">
+        </mat-form-field>
+<br>
+        <mat-form-field>
+            <mat-label>E-mail:</mat-label>
+            <input matInput type="text" name="correousuario" 
+            formControlName="correousuario">
+        </mat-form-field>
+<br>
+        <mat-form-field>
+            <mat-label>Dni:</mat-label>
+            <input matInput type="text" name="dniusuario" 
+            formControlName="dniusuario">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Nombres Usuario:</mat-label>
+            <input matInput type="text" name="nombreusuario" 
+            formControlName="nombreusuario">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Apellidos Usuario:</mat-label>
+            <input matInput type="text" name="apellidosusuario" 
+            formControlName="apellidosusuario">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Estado:</mat-label>
+            <input matInput type="text" name="activo" 
+            formControlName="activo">
+        </mat-form-field>
+    </form>
+</div>

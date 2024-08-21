@@ -50,8 +50,6 @@ export class ProductoDetalleComponent {
       precioprod: new FormControl(''),
       stockprod: new FormControl(''),
       activo: new FormControl(''),
-      razonsocial: new FormControl(''),
-      nombrecategoria: new FormControl('')
       
     })
   }
@@ -59,9 +57,9 @@ export class ProductoDetalleComponent {
   consultarProducto(id: number){
     this.productoService.ObtenerUnProducto(id).subscribe((data)=>{
       console.log(data)
-      const {nombreprod,precioprod,stockprod,activo,razonsocial,nombrecategoria} = data
+      const {nombreprod,precioprod,stockprod,activo} = data
       this.productoForm.setValue({
-        nombreprod,precioprod,stockprod,activo,razonsocial,nombrecategoria
+        nombreprod,precioprod,stockprod,activo
       })
 
     })

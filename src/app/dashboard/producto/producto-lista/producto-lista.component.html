@@ -1,6 +1,6 @@
 <br><br>
 <br>
-<button id="btntop" mat-raised-button color="primary" (click)="irCrearProducto()">Nuevo Proveedor</button>
+<button id="btntop" mat-raised-button color="primary" (click)="irCrearProducto()">Nuevo Producto</button>
 
 <div class="table-container">
   <table mat-table [dataSource]="productos" class="mat-elevation-z8">
@@ -40,11 +40,13 @@
       <td mat-cell *matCellDef="let element"> {{element.nombrecategoria}} </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="razonsocial">
-      <th mat-header-cell *matHeaderCellDef> Proveedor </th>
-      <td mat-cell *matCellDef="let element"> {{element.razonsocial}} </td>
-    </ng-container>
+        <!-- Symbol Column -->
+      <ng-container matColumnDef="razonsocial">
+        <th mat-header-cell *matHeaderCellDef> Proveedor </th>
+        <td mat-cell *matCellDef="let element"> {{element.razonsocial}} </td>
+      </ng-container>
+    
+    
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="irDetalleProducto(row.codproducto)"></tr>

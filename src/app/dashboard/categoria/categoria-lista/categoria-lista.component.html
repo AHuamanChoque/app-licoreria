@@ -1,19 +1,26 @@
+<br><br>
+<br>
+<button id="btntop" mat-raised-button color="primary" (click)="irCrearCategoria()">Nuevo Categoria</button>
+
 <div class="table-container">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+  
+  <table mat-table [dataSource]="categorias" class="mat-elevation-z8">
   
       <!-- Position Column -->
       <ng-container matColumnDef="codcategoria">
-        <th mat-header-cell *matHeaderCellDef> CodCategoria </th>
+        <th mat-header-cell *matHeaderCellDef> ID Categoria </th>
         <td mat-cell *matCellDef="let element"> {{element.codcategoria}} </td>
       </ng-container>
   
       <!-- Name Column -->
       <ng-container matColumnDef="nombrecategoria">
-        <th mat-header-cell *matHeaderCellDef> NombreCategoria </th>
+        <th mat-header-cell *matHeaderCellDef> Nombre de Categoria de Producto </th>
         <td mat-cell *matCellDef="let element"> {{element.nombrecategoria}} </td>
       </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" 
+      (click)="irDetalleCategoria(row.codcategoria)"></tr>
     </table>
   </div>

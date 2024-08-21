@@ -1,19 +1,23 @@
+<br><br>
+<br>
+<button id="btntop" mat-raised-button color="primary" (click)="irCrearCargo()">Nuevo Cargo</button>
+
 <div class="table-container">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="cargos" class="mat-elevation-z8">
   
       <!-- Position Column -->
-      <ng-container matColumnDef="codCargo">
-        <th mat-header-cell *matHeaderCellDef> CodCargo </th>
-        <td mat-cell *matCellDef="let element"> {{element.codCargo}} </td>
+      <ng-container matColumnDef="codcargo">
+        <th mat-header-cell *matHeaderCellDef> ID cargo </th>
+        <td mat-cell *matCellDef="let element"> {{element.codcargo}} </td>
       </ng-container>
   
       <!-- Name Column -->
-      <ng-container matColumnDef="nombreCargo">
-        <th mat-header-cell *matHeaderCellDef> NombreCargo </th>
-        <td mat-cell *matCellDef="let element"> {{element.nombreCargo}} </td>
+      <ng-container matColumnDef="nombrecargo">
+        <th mat-header-cell *matHeaderCellDef> Nombre del Cargo </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombrecargo}} </td>
       </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="irDetalleCargo(row.codcargo)"></tr>
     </table>
   </div>

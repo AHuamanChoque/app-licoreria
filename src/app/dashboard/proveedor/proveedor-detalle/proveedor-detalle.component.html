@@ -1,0 +1,35 @@
+<div class="module-header">
+    <div class="left">
+        <h3>{{formTitulo}}</h3>
+    </div>
+    <div class="right">
+        <button mat-raised-button color="primary">
+            Guardar
+        </button>        
+    </div>
+</div>
+<br>
+<hr />
+<br>
+<div class="form-container">
+    <form class="form" [formGroup]="proveedorForm">
+
+        <mat-form-field>
+            <mat-label>Razón Social:</mat-label>
+            <input matInput type="text" name="razonsocial" 
+            formControlName="razonsocial">
+        </mat-form-field>
+<br>
+        <mat-form-field>
+            <mat-label>Ruc Proveedor:</mat-label>
+            <input matInput type="text" name="rucproveedor" 
+            formControlName="rucproveedor">
+        </mat-form-field>
+<br>
+        <mat-form-field>
+            <mat-label>Telefono Proveedor:</mat-label>
+            <input matInput type="text" name="telefonoproveedor" 
+            formControlName="telefonoproveedor">
+        </mat-form-field>
+    </form>
+</div>

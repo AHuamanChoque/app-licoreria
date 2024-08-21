@@ -1,33 +1,9 @@
 import { Component } from '@angular/core';
 import { MaterialModule } from '../../../angular-material/material/material.module';
+import { CategoriaService } from '../categoria.service';
+import { Categoria } from '../categoria';
+import { ActivatedRoute, Router } from '@angular/router';
 
-
-export interface PeriodicElement {
-  codcategoria: number;
-  nombrecategoria: string;
-  
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {codcategoria: 1, nombrecategoria: 'Cervezas'},
-  {codcategoria: 2, nombrecategoria: 'Vinos'},
-  {codcategoria: 3, nombrecategoria: 'Whisky'},
-  {codcategoria: 4, nombrecategoria: 'Ron'},
-  {codcategoria: 5, nombrecategoria: 'Ginebra'},
-  {codcategoria: 6, nombrecategoria: 'Vodka'},
-  {codcategoria: 7, nombrecategoria: 'Tequila'},
-  {codcategoria: 8, nombrecategoria: 'Brandy'},
-  {codcategoria: 9, nombrecategoria: 'Aguardiente'},
-  {codcategoria: 10, nombrecategoria: 'Vermut'},
-  {codcategoria: 11, nombrecategoria: 'Bitter'},
-  {codcategoria: 12, nombrecategoria: 'Destilados especiales'},
-  {codcategoria: 13, nombrecategoria: 'Pisco'},
-  {codcategoria: 14, nombrecategoria: 'Sake'},
-  {codcategoria: 15, nombrecategoria: 'Bebidas energéticas'},
-  {codcategoria: 16, nombrecategoria: 'Otros'},
-
-
-];
 
 @Component({
   selector: 'app-categoria-lista',
@@ -38,5 +14,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class CategoriaListaComponent {
   displayedColumns: string[] = ['codcategoria', 'nombrecategoria'];
-  dataSource = ELEMENT_DATA;
+  categorias: Categoria[] = []
+
+  constructor(private categoriaService: CategoriaService,
+      private route: ActivatedRoute,
+      private router: Router
+  ){
+
+  }
+
+  ngOnInit(): void {
+    this.categoriaService.ObtenerTodasCategorias().subscribe((data) =>{
+      //console.log(data)
+      this.categorias= data
+    })
+  }
+
+
+  irDetalleCategoria(id:string){
+    this.router.navigate([id],{relativeTo: this.route})
+  }
+
+  irCrearCategoria(){
+    this.router.navigate(["nuevo"],{relativeTo: this.route})
+  }
+
 }

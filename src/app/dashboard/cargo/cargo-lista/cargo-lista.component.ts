@@ -1,25 +1,10 @@
 import { Component } from '@angular/core';
 import { MaterialModule } from '../../../angular-material/material/material.module';
+import { CargoService } from '../cargo.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Cargo } from '../cargo';
 
 
-export interface PeriodicElement {
-  codCargo: number;
-  nombreCargo: string;
-  
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {codCargo: 1, nombreCargo: 'Administrador'},
-  {codCargo: 2, nombreCargo: 'Operario'},
-  {codCargo: 3, nombreCargo: 'Vendedor'},
-  {codCargo: 4, nombreCargo: 'Atencion al Cliente'},
-  {codCargo: 5, nombreCargo: 'Gerente de calidad'},
-  {codCargo: 6, nombreCargo: 'Cajero'},
-  {codCargo: 7, nombreCargo: 'Asesor de productos'},
-  {codCargo: 8, nombreCargo: 'Reponedor de inventario'},
-  {codCargo: 9, nombreCargo: 'Delivery'},
-
-];
 
 @Component({
   selector: 'app-cargo-lista',
@@ -29,6 +14,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrl: './cargo-lista.component.css'
 })
 export class CargoListaComponent {
-  displayedColumns: string[] = ['codCargo','nombreCargo'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['codcargo', 'nombrecargo'];
+  cargos: Cargo[] = []
+
+  constructor(private cargoService: CargoService,
+    private route: ActivatedRoute,
+    private router: Router
+){
+
+}
+
+ngOnInit(): void {
+  this.cargoService.ObtenerTodosCargos().subscribe((data) =>{
+    //console.log(data)
+    this.cargos= data
+  })
+}
+
+irDetalleCargo(id:string){
+  this.router.navigate([id],{relativeTo: this.route})
+}
+
+irCrearCargo(){
+  this.router.navigate(["nuevo"],{relativeTo: this.route})
+}
+
 }

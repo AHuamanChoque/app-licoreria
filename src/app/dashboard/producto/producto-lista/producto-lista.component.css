@@ -16,3 +16,9 @@ table {
   width: auto; /* Ajusta el ancho de la tabla según su contenido */
   max-width: 100%; /* Limita el ancho máximo de la tabla para que no se desborde */
 }
+#btntop{
+  position: absolute; /* Permite posicionar el botón en relación al contenedor padre */
+  left: 30px;
+  top: calc(160px - 10px);
+
+}

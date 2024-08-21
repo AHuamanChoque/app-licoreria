@@ -1,37 +1,58 @@
+<br><br>
+<br>
+<button id="btntop" mat-raised-button color="primary" (click)="irCrearColaborador()">Nuevo Colaborador</button>
 
 <div class="table-container">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="colaboradores" class="mat-elevation-z8">
   
       <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      <ng-container matColumnDef="codcolaborador">
+        <th mat-header-cell *matHeaderCellDef> Id Colaborador. </th>
+        <td mat-cell *matCellDef="let element"> {{element.codcolaborador}} </td>
       </ng-container>
   
       <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <ng-container matColumnDef="nombrecol">
+        <th mat-header-cell *matHeaderCellDef> Nombres</th>
+        <td mat-cell *matCellDef="let element"> {{element.nombrecol}} </td>
       </ng-container>
   
       <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      <ng-container matColumnDef="apellidocol">
+        <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellidocol}} </td>
       </ng-container>
   
-      <ng-container matColumnDef="precio">
-        <th mat-header-cell *matHeaderCellDef> Price </th>
-        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+      <ng-container matColumnDef="telefonocol">
+        <th mat-header-cell *matHeaderCellDef> Telefono </th>
+        <td mat-cell *matCellDef="let element"> {{element.telefonocol}} </td>
       </ng-container>
   
       <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <ng-container matColumnDef="correocol">
+        <th mat-header-cell *matHeaderCellDef> E-mail </th>
+        <td mat-cell *matCellDef="let element"> {{element.correocol}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="dnicol">
+        <th mat-header-cell *matHeaderCellDef> Dni  </th>
+        <td mat-cell *matCellDef="let element"> {{element.dnicol}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="cargo">
+          <th mat-header-cell *matHeaderCellDef>  Id Cargo </th>
+          <td mat-cell *matCellDef="let element"> {{element.cargo}} </td>
       </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="irDetalleColaborador(row.codcolaborador)"></tr>
     </table>
   </div>

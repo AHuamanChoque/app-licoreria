@@ -1,36 +1,52 @@
+<br><br>
+<br>
+<button id="btntop" mat-raised-button color="primary" (click)="irCrearProducto()">Nuevo Proveedor</button>
+
 <div class="table-container">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="productos" class="mat-elevation-z8">
 
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
+    <ng-container matColumnDef="codproducto">
       <th mat-header-cell *matHeaderCellDef> Codigo Producto </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.codproducto}} </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Nombre del Producto </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <ng-container matColumnDef="nombreprod">
+      <th mat-header-cell *matHeaderCellDef>Nombre Producto</th>
+      <td mat-cell *matCellDef="let element"> {{element.nombreprod}} </td>
     </ng-container>
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Precio del Producto </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <ng-container matColumnDef="precioprod">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let element"> {{element.precioprod}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="precio">
+    <ng-container matColumnDef="stockprod">
       <th mat-header-cell *matHeaderCellDef> Stock </th>
-      <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.stockprod}} </td>
     </ng-container>
 
     <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Activo </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <ng-container matColumnDef="activo">
+      <th mat-header-cell *matHeaderCellDef> Estado </th>
+      <td mat-cell *matCellDef="let element"> {{element.activo}} </td>
+    </ng-container>
+    
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="nombrecategoria">
+      <th mat-header-cell *matHeaderCellDef> Categoria de Producto </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombrecategoria}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="razonsocial">
+      <th mat-header-cell *matHeaderCellDef> Proveedor </th>
+      <td mat-cell *matCellDef="let element"> {{element.razonsocial}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="irDetalleProducto(row.codproducto)"></tr>
   </table>
 </div>

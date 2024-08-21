@@ -11,21 +11,37 @@ import { ColaboradorListaComponent } from './dashboard/colaborador/colaborador-l
 import { ProveedorListaComponent } from './dashboard/proveedor/proveedor-lista/proveedor-lista.component';
 import { TipoproveedorListaComponent } from './dashboard/tipoproveedor/tipoproveedor-lista/tipoproveedor-lista.component';
 import { ClienteListaComponent } from './dashboard/cliente/cliente-lista/cliente-lista.component';
+import { authGuard } from './auth.guard';
+import { CategoriaDetalleComponent } from './dashboard/categoria/categoria-detalle/categoria-detalle.component';
+import { CargoDetalleComponent } from './dashboard/cargo/cargo-detalle/cargo-detalle.component';
+import { ProveedorDetalleComponent } from './dashboard/proveedor/proveedor-detalle/proveedor-detalle.component';
+import { ColaboradorDetalleComponent } from './dashboard/colaborador/colaborador-detalle/colaborador-detalle.component';
+import { ClienteDetalleComponent } from './dashboard/cliente/cliente-detalle/cliente-detalle.component';
+import { ProductoDetalleComponent } from './dashboard/producto/producto-detalle/producto-detalle.component';
+import { TipoproveedorDetalleComponent } from './dashboard/tipoproveedor/tipoproveedor-detalle/tipoproveedor-detalle.component';
 
 export const routes: Routes = [
     {path:"login",component: LoginComponent},
     {path:"dashboard",component:DashboardComponent,
+        canActivate: [authGuard],
         children:[
             {path:"home", component : HomeComponent},
             {path:"producto", component : ProductoListaComponent},
+            {path:"producto/:id", component : ProductoDetalleComponent},
             {path:"categoria", component : CategoriaListaComponent},
+            {path:"categoria/:id", component : CategoriaDetalleComponent},
             {path:"cargo", component : CargoListaComponent},
+            {path:"cargo/:id", component : CargoDetalleComponent},
             {path:"colaborador", component : ColaboradorListaComponent},
+            {path:"colaborador/:id", component : ColaboradorDetalleComponent},
             {path:"proveedor", component : ProveedorListaComponent},
+            {path:"proveedor/:id", component : ProveedorDetalleComponent},
             {path:"tipoproveedor", component : TipoproveedorListaComponent},
+            {path:"tipoproveedor/:id", component : TipoproveedorDetalleComponent},
             {path:"cliente", component : ClienteListaComponent},
+            {path:"cliente/:id", component : ClienteDetalleComponent}
             
         ]},
         {path:"",redirectTo:"login", pathMatch:"full"},
-        {path:"", component : PageNotFoundComponent}
+        {path:"**", component : PageNotFoundComponent}
 ];

@@ -19,6 +19,8 @@ import { ColaboradorDetalleComponent } from './dashboard/colaborador/colaborador
 import { ClienteDetalleComponent } from './dashboard/cliente/cliente-detalle/cliente-detalle.component';
 import { ProductoDetalleComponent } from './dashboard/producto/producto-detalle/producto-detalle.component';
 import { TipoproveedorDetalleComponent } from './dashboard/tipoproveedor/tipoproveedor-detalle/tipoproveedor-detalle.component';
+import { UsuarioDetalleComponent } from './dashboard/usuario/usuario-detalle/usuario-detalle.component';
+import { UsuarioListaComponent } from './dashboard/usuario/usuario-lista/usuario-lista.component';
 
 export const routes: Routes = [
     {path:"login",component: LoginComponent},
@@ -39,7 +41,9 @@ export const routes: Routes = [
             {path:"tipoproveedor", component : TipoproveedorListaComponent},
             {path:"tipoproveedor/:id", component : TipoproveedorDetalleComponent},
             {path:"cliente", component : ClienteListaComponent},
-            {path:"cliente/:id", component : ClienteDetalleComponent}
+            {path:"cliente/:id", component : ClienteDetalleComponent},
+            {path:"usuario", component : UsuarioListaComponent},
+            {path:"usuario/:id", component : UsuarioDetalleComponent}
             
         ]},
         {path:"",redirectTo:"login", pathMatch:"full"},

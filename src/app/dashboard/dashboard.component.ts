@@ -46,6 +46,9 @@ export class DashboardComponent {
   irPost(){
     this.router.navigate(["post"],{relativeTo:this.route})
   }
+  irUsuario(){
+    this.router.navigate(["usuario"],{relativeTo:this.route})
+  }
   salir(){
     this.authService.logout()
     this.router.navigateByUrl("/login")

@@ -1,0 +1,59 @@
+<br><br>
+<br>
+<button id="btntop" mat-raised-button color="primary" (click)="irCrearUsuario()">Nuevo Usuario</button>
+
+<div class="table-container">
+    <table mat-table [dataSource]="usuarios" class="mat-elevation-z8">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="idusuario">
+        <th mat-header-cell *matHeaderCellDef> Id User</th>
+        <td mat-cell *matCellDef="let element"> {{element.idusuario}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="nickusuario">
+        <th mat-header-cell *matHeaderCellDef> Nick Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.nickusuario}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="correousuario">
+        <th mat-header-cell *matHeaderCellDef> E-mail </th>
+        <td mat-cell *matCellDef="let element"> {{element.correousuario}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="telefonoproveedor">
+        <th mat-header-cell *matHeaderCellDef> Telefono </th>
+        <td mat-cell *matCellDef="let element"> {{element.telefonoproveedor}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="password">
+        <th mat-header-cell *matHeaderCellDef> Password Encrypt </th>
+        <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+      </ng-container>
+        <!-- Symbol Column -->
+      <ng-container matColumnDef="dniusuario">
+        <th mat-header-cell *matHeaderCellDef> Dni </th>
+        <td mat-cell *matCellDef="let element"> {{element.dniusuario}} </td>
+      </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="nombreusuario">
+            <th mat-header-cell *matHeaderCellDef> Nombre User </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombreusuario}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="apellidosusuario">
+            <th mat-header-cell *matHeaderCellDef> Apellido User</th>
+            <td mat-cell *matCellDef="let element"> {{element.apellidosusuario}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="activo">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.activo}} </td>
+        </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="irDetalleUsuario(row.idusuario)"></tr>
+    </table>
+  </div>
